@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Bingo } from '../models/bingo.model';
 import { BINGO_INFO } from './mock-bingo-info';
 
 @Injectable({
@@ -8,5 +9,7 @@ export class BingoInfoService {
 
   constructor() { }
 
-  getBingoInfo() { return BINGO_INFO }
+  getBingoInfo(): Bingo { 
+    return BINGO_INFO
+  }
 }

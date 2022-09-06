@@ -1,1 +1,6 @@
-<p>prompts-list works!</p>
+<div class="pure-menu prompts-menu">
+    <span class="pure-menu-heading">{{ bingo.name }}</span>
+    <ul class="pure-menu-list">
+        <li *ngFor="let prompt of bingo.prompts" class="pure-menu-link">{{ prompt.description }}</li>
+    </ul>
+</div>

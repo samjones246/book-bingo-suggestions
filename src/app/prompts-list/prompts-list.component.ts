@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BingoInfoService } from '../bingos/bingo-info.service';
+import { Bingo } from '../models/bingo.model';
 
 @Component({
   selector: 'app-prompts-list',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PromptsListComponent implements OnInit {
 
-  constructor() { }
+  bingo: Bingo
 
-  ngOnInit(): void {
+  constructor(private bingoInfoService: BingoInfoService) {
+    this.bingo = bingoInfoService.getBingoInfo()
   }
 
+  ngOnInit(): void { }
 }

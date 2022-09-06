@@ -1,6 +1,8 @@
+import { Bingo } from "../models/bingo.model"
+
 export { BINGO_INFO }
 
-const BINGO_INFO = {
+const BINGO_INFO: Bingo = {
     "name": "Becca's Anniversary Bingo",
     "prompts": [
         {
