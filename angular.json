@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "style": "scss"
         },
         "@schematics/angular:application": {
           "strict": true
@@ -31,7 +31,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.scss",
+              "./node_modules/purecss/build/pure.css"
             ],
             "scripts": []
           },
@@ -94,7 +95,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -130,5 +131,10 @@
   "defaultProject": "book-bingo-suggestions",
   "cli": {
     "analytics": "be827a7d-23b0-428f-afaa-2a6bd1a05c7b"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
   }
 }
