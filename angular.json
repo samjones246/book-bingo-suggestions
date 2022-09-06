@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "book-bingo-suggestions"
+  "defaultProject": "book-bingo-suggestions",
+  "cli": {
+    "analytics": "be827a7d-23b0-428f-afaa-2a6bd1a05c7b"
+  }
 }
