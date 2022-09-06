@@ -11,7 +11,7 @@ export class PromptsListComponent implements OnInit {
 
   bingo: Bingo
 
-  constructor(private bingoInfoService: BingoInfoService) {
+  constructor(bingoInfoService: BingoInfoService) {
     this.bingo = bingoInfoService.getBingoInfo()
   }
 
