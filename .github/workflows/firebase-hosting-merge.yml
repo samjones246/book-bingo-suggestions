@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build Project
-        run: npm build --prod
+        run: npm run build --prod
       - name: Upload Build Artifact
         uses: actions/upload-artifact@master
         with:
