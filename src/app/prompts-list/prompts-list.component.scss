@@ -1,3 +1,31 @@
 .prompts-menu {
-    display: inline-block
+    display: inline-block;
+}
+
+.prompts-menu-selected {
+    background-color: #eee;
+}
+
+.suggestions {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+}
+
+.book-title {
+    font-weight: bold;
+    color: #000;
+}
+
+.book-author {
+    font-weight: 300;
+    color: grey;
+}
+
+.book-list-item {
+    font-size: large;
+    line-height: 24pt;
 }

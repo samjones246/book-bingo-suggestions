@@ -13,7 +13,6 @@ export class PromptsListComponent implements OnInit {
   bingo: Bingo
   selectedPrompt: Prompt | null = null
   selectedIndex: number | null = null
-  selectedElem: EventTarget | null = null
 
   constructor(bingoInfoService: BingoInfoService, private renderer: Renderer2) {
     this.bingo = bingoInfoService.getBingoInfo()
@@ -25,11 +24,10 @@ export class PromptsListComponent implements OnInit {
     if (this.selectedIndex != index) {
       this.selectedIndex = index
       this.selectedPrompt = this.bingo.prompts[index]
-      if (this.selectedElem != null) {
-        this.renderer.removeClass(this.selectedElem, "pure-menu-selected")
-      }
-      this.selectedElem = event.target
-      this.renderer.addClass(this.selectedElem, "pure-menu-selected")
     }
+  }
+
+  isSelected(index: number) {
+    return index == this.selectedIndex
   }
 }
