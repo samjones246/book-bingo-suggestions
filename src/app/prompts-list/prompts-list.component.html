@@ -1,14 +1,14 @@
 <div class="pure-menu prompts-menu">
-    <span class="pure-menu-heading">{{ bingo.name }}</span>
+    <span class="pure-menu-heading">{{ heading }}</span>
     <ul class="pure-menu-list">
-        <li *ngFor="let prompt of bingo.prompts; let i=index" class="pure-menu-item" [class.prompts-menu-selected]="isSelected(i)">
-            <a href="#" class="pure-menu-link" (click)="onPromptClicked($event, i)">{{ prompt.description }}</a>
+        <li *ngFor="let prompt of prompts; let i=index" class="pure-menu-item" [class.prompts-menu-selected]="isSelected(i)">
+            <a href="#" class="pure-menu-link" (click)="onPromptClicked(i)">{{ prompt.description }}</a>
         </li>
     </ul>
 </div>
 <div class="suggestions">
-    <ul *ngIf="selectedPrompt != null" >
-        <li *ngFor="let book of selectedPrompt.suggestions" class="book-list-item">
+    <ul *ngIf="selected != -1">
+        <li *ngFor="let book of prompts[selected].suggestions" class="book-list-item">
             <span class="book-title">{{ book.title }}</span><span class="book-author"> - {{ book.author }}</span>
         </li>
     </ul>

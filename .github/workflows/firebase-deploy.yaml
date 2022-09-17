@@ -14,9 +14,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: npm install --force
+        run: npm install
       - name: Build Project
-        run: npm run build --prod --configuration=production
+        run: ng build --prod
       - name: Upload Build Artifact
         uses: actions/upload-artifact@master
         with:

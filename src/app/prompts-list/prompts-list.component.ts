@@ -1,7 +1,10 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
-import { BingoInfoService } from '../bingos/bingo-info.service';
+import { Component, OnInit } from '@angular/core';
+import { docData, Firestore } from '@angular/fire/firestore';
+import { doc } from '@firebase/firestore';
 import { Bingo } from '../models/bingo.model';
 import { Prompt } from '../models/prompt.model';
+
+const ACTIVE_BINGO_ID = "Q6ZoKH3DtdaSz0ygA5Si"
 
 @Component({
   selector: 'app-prompts-list',
@@ -10,24 +13,29 @@ import { Prompt } from '../models/prompt.model';
 })
 export class PromptsListComponent implements OnInit {
 
-  bingo: Bingo
-  selectedPrompt: Prompt | null = null
-  selectedIndex: number | null = null
+  heading: String = "Loading..."
+  prompts: Prompt[] = []
+  selected: number = -1 
 
-  constructor(bingoInfoService: BingoInfoService, private renderer: Renderer2) {
-    this.bingo = bingoInfoService.getBingoInfo()
+  constructor(firestore: Firestore) {
+    const bingoRef = doc(firestore, "bingos", ACTIVE_BINGO_ID)
+    docData(bingoRef).subscribe(data => {
+      const bingo = data as Bingo
+      this.heading = bingo.name
+      this.prompts = bingo.prompts
+
+    })
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+  }
 
-  onPromptClicked(event: Event, index: number) {
-    if (this.selectedIndex != index) {
-      this.selectedIndex = index
-      this.selectedPrompt = this.bingo.prompts[index]
-    }
+  onPromptClicked(index: number) {
+    this.selected = index
   }
 
   isSelected(index: number) {
-    return index == this.selectedIndex
+    return index == this.selected
   }
+
 }

@@ -11,9 +11,7 @@ describe('PromptsListComponent', () => {
       declarations: [ PromptsListComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(PromptsListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

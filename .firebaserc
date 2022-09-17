@@ -1,4 +1,13 @@
 {
+  "targets": {
+    "book-bingo-suggestions": {
+      "hosting": {
+        "book-bingo-suggestions": [
+          "book-bingo-suggestions"
+        ]
+      }
+    }
+  },
   "projects": {
     "default": "book-bingo-suggestions"
   }
