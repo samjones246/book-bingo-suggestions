@@ -9,7 +9,7 @@
 <div class="suggestions">
     <ul *ngIf="selected != -1">
         <li *ngFor="let book of prompts[selected].suggestions" class="book-list-item">
-            <span class="book-title">{{ book.title }}</span><span class="book-author"> - {{ book.author }}</span>
+            <span class="book-title">{{ book.title }}</span><span class="book-author"> - {{ book.author }} {{ isbnString(book) }}</span>
         </li>
     </ul>
 </div>
