@@ -1,1 +1,8 @@
-<app-prompts-list></app-prompts-list>
+<div class="bingo-title">{{ title }}</div>
+<div class="prompts-list">
+    <app-section *ngFor="let prompt of prompts; let i=index"
+    [description]="prompt.description"
+    [books]="prompt.suggestions"
+    [expanded]="i == selected"
+    (select)="select(i)"></app-section>
+</div>

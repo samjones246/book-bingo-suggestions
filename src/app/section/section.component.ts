@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
 import { Book } from '../models/book.model';
 
@@ -8,17 +8,18 @@ import { Book } from '../models/book.model';
   styleUrls: ['./section.component.scss']
 })
 export class SectionComponent implements OnInit {
-  description: String = "A Prompt"
-  books: Book[] = [new Book("Floop Doop", "Writey Writer")]
-  expanded: Boolean = true
+  @Input() description: String = "A Prompt"
+  @Input() books: Book[] = [new Book("Floop Doop", "Writey Writer")]
+  @Input() expanded: Boolean = false
+  @Output() select: EventEmitter<any> = new EventEmitter()
 
-  constructor(firestore: Firestore) { }
+  constructor() { }
 
   ngOnInit(): void {
 
   }
 
   toggle(): void {
-    this.expanded = !this.expanded
+    this.select.emit(null)
   }
 }
