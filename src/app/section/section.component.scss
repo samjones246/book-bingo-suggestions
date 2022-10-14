@@ -5,8 +5,11 @@
     text-align: left;
     padding: 24px;
     background: rgb(183, 75, 161);
-    &:hover {
-        background: rgb(188, 106, 172);
+    -webkit-tap-highlight-color: transparent;
+    @media (pointer:fine) {
+        &:hover {
+            background: rgb(188, 106, 172);
+        }
     }
     &:active {
         background: rgb(189, 126, 176)
