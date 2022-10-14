@@ -1,0 +1,14 @@
+<div>
+    <div class="section-header" (click)="toggle()">
+        <span>{{ description }}</span>
+    </div>
+    <div *ngIf="expanded" class="section-content">
+        <ul>
+            <li *ngFor="let book of books">
+                <span class="book-title">{{ book.title }}</span>
+                <span *ngIf="book.title && book.author" class="book-author"> - </span>
+                <span class="book-author">{{ book.author }}</span>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+.section-header {
+    font-size: larger;
+    font-weight: bold;
+    color: #fff;
+    text-align: left;
+    padding: 24px;
+    background: rgb(183, 75, 161);
+    &:hover {
+        background: rgb(188, 106, 172);
+    }
+    &:active {
+        background: rgb(189, 126, 176)
+    }
+    cursor: pointer;
+
+}
+
+.dropdown-arrow-collapsed {
+
+}
+
+.dropdown-arrow-expanded {
+
+}
+
+.section-content {
+    font-size: large;
+}
+
+.book-title {
+    font-weight: bold;
+    color: #000;
+}
+
+.book-author {
+    font-weight: 300;
+    color: grey;
+}
+
+
+
