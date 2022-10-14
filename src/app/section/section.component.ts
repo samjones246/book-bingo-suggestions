@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Book } from '../models/book.model';
 
 @Component({
@@ -8,7 +8,7 @@ import { Book } from '../models/book.model';
 })
 export class SectionComponent {
   @Input() description: String = "A Prompt"
-  @Input() books: Book[] = [new Book("Floop Doop", "Writey Writer")]
+  @Input() books: Book[] = [new Book("", "(No Suggestions)")]
   @Input() expanded: Boolean = false
   @Output() select: EventEmitter<any> = new EventEmitter()
 
