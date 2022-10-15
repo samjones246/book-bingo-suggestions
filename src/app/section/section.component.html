@@ -4,14 +4,12 @@
         <fa-icon 
         [icon]="expanded ? arrowExpanded : arrowCollapsed"></fa-icon>
     </div>
-    <div *ngIf="expanded" class="section-content">
-        <ul>
-            <li *ngFor="let book of books">
-                <span class="book-title">{{ book.title }}</span>
-                <span *ngIf="book.title && book.author" class="book-author"> - </span>
-                <span class="book-author">{{ book.author }}</span>
-                <span *ngIf="book.isbn" class="book-isbn"> ({{ book.isbn }})</span>
-            </li>
-        </ul>
-    </div>
+    <ul *ngIf="expanded" [@sectionContentState]>
+        <li *ngFor="let book of books">
+            <span class="book-title">{{ book.title }}</span>
+            <span *ngIf="book.title && book.author" class="book-author"> - </span>
+            <span class="book-author">{{ book.author }}</span>
+            <span *ngIf="book.isbn" class="book-isbn"> ({{ book.isbn }})</span>
+        </li>
+    </ul>
 </div>
