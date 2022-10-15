@@ -1,6 +1,8 @@
 <div>
     <div class="section-header" (click)="toggle()">
         <span>{{ description }}</span>
+        <fa-icon 
+        [icon]="expanded ? arrowExpanded : arrowCollapsed"></fa-icon>
     </div>
     <div *ngIf="expanded" class="section-content">
         <ul>
