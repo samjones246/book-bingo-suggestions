@@ -1,5 +1,8 @@
 <div>
-    <div class="section-header" (click)="toggle()">
+    <div 
+    class="section-header" 
+    (click)="toggle()"
+    [class.top-border]="!first">
         <span>{{ description }}</span>
         <fa-icon 
         [icon]="expanded ? arrowExpanded : arrowCollapsed"></fa-icon>

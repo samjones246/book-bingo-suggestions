@@ -24,6 +24,7 @@ export class SectionComponent{
   @Input() description: String = "A Prompt"
   @Input() books: Book[] = []
   @Input() expanded: Boolean = false
+  @Input() first: Boolean = false
   @Output() select: EventEmitter<any> = new EventEmitter()
   arrowCollapsed = faChevronDown
   arrowExpanded = faChevronUp
