@@ -6,6 +6,7 @@ import { doc } from '@firebase/firestore';
 import { Bingo } from './models/bingo.model';
 import { AuthService } from './services/auth.service';
 import { User } from './models/user';
+import { faPencil } from '@fortawesome/free-solid-svg-icons';
 
 const ACTIVE_BINGO_ID = "Q6ZoKH3DtdaSz0ygA5Si"
 
@@ -19,6 +20,8 @@ export class AppComponent {
   prompts: Prompt[] = []
   selected: Number = -1
   user: User | null = null
+
+  editIcon = faPencil
 
   constructor(
     firestore: Firestore,

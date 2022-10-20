@@ -1,4 +1,10 @@
-<div class="bingo-title">{{ title }}</div>
+<div class="bingo-title">
+    {{ title }}
+    <fa-icon 
+        *ngIf="editorEnabled()" 
+        [icon]="editIcon"
+        (click)="{}"></fa-icon>
+</div>
 <a class="login-link" (click)="onLoginClicked()">
     {{ user ? 'Log out' : 'Admin? Login' }}
 </a>
