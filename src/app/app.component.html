@@ -1,4 +1,8 @@
 <div class="bingo-title">{{ title }}</div>
+<a class="login-link" (click)="onLoginClicked()">
+    {{ user ? 'Log out' : 'Admin? Login' }}
+</a>
+
 <div class="prompts-list">
     <app-section *ngFor="let prompt of prompts; let i=index"
     [description]="prompt.description"

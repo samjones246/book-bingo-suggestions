@@ -4,6 +4,8 @@ import { Prompt } from './models/prompt.model';
 import { docData, Firestore } from '@angular/fire/firestore';
 import { doc } from '@firebase/firestore';
 import { Bingo } from './models/bingo.model';
+import { AuthService } from './services/auth.service';
+import { User } from './models/user';
 
 const ACTIVE_BINGO_ID = "Q6ZoKH3DtdaSz0ygA5Si"
 
@@ -16,14 +18,25 @@ export class AppComponent {
   title: String = "Loading..."
   prompts: Prompt[] = []
   selected: Number = -1
+  user: User | null = null
 
-  constructor(firestore: Firestore) {
+  constructor(
+    firestore: Firestore,
+    private authService: AuthService
+  ) {
     const bingoRef = doc(firestore, "bingos", ACTIVE_BINGO_ID)
+
     docData(bingoRef).subscribe(data => {
       const bingo = data as Bingo
       this.title = bingo.name
       this.prompts = bingo.prompts
     })
+
+    authService
+      .getUserObservable()
+      .subscribe(user => {
+        this.user = user
+      })
   }
 
   select(index: Number): void {
@@ -32,5 +45,17 @@ export class AppComponent {
     } else {
       this.selected = index
     }
+  }
+
+  onLoginClicked(): void {
+    if (this.user) {
+      this.authService.logout()
+    } else {
+      this.authService.login()
+    }
+  }
+
+  editorEnabled(): Boolean {
+    return this.user?.admin || false
   }
 }
