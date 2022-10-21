@@ -4,15 +4,15 @@
     color: #fff;
     text-align: left;
     padding: 24px;
-    background: rgb(183, 75, 161);
+    background: #ff0000;
     -webkit-tap-highlight-color: transparent;
     @media (pointer:fine) {
         &:hover {
-            background: rgb(188, 106, 172);
+            background: #ff6e6e;
         }
     }
     &:active {
-        background: rgb(189, 126, 176)
+        background: #ffa0a0
     }
     cursor: pointer;
 
@@ -22,20 +22,25 @@
 }
 
 .top-border {
-    border-top: 1px solid black;
+    border-top: 1px solid #a5a5a5;
 }
 
 .book-title {
     font-size: large;
-    font-weight: bold;
+    font-weight: 600;
     color: #000;
 }
 
-.book-isbn,
+.book-isbn {
+    font-size: large;
+    font-weight: 300;
+    color: #a5a5a5;
+}
+
 .book-author {
     font-size: large;
     font-weight: 300;
-    color: grey;
+    color: #000;
 }
 
 
