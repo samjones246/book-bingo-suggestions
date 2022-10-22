@@ -25,6 +25,7 @@ export class SectionComponent{
   @Input() books: Book[] = []
   @Input() expanded: Boolean = false
   @Input() first: Boolean = false
+  @Input() last: Boolean = false
   @Output() select: EventEmitter<any> = new EventEmitter()
   arrowCollapsed = faChevronDown
   arrowExpanded = faChevronUp
