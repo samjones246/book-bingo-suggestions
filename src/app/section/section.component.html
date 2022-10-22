@@ -3,7 +3,7 @@
     class="section-header" 
     (click)="toggle()"
     [class.top-border]="true"
-    [class.bottom-border]="last">
+    [class.bottom-border]="last && !expanded">
         <span>{{ description }}</span>
         <fa-icon 
         [icon]="expanded ? arrowExpanded : arrowCollapsed"></fa-icon>
