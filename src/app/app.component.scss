@@ -7,6 +7,13 @@
 .bingo-banner {
     width: 100%;
     text-align: left;
+    background-image: url("../assets/banner.jpg");
+    @media screen and (max-width: 575px){
+        background-position: 50% 50%;
+    }
+    background-size: contain;
+    height: 75px;
+    background-repeat: no-repeat;
 }
 
 .login-link {
