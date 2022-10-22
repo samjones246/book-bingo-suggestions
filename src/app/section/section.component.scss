@@ -1,6 +1,7 @@
 .section-header {
-    font-size: larger;
+    font-size: x-large;
     font-weight: bold;
+    font-family: 'Send Flowers', cursive;
     color: #fff;
     text-align: left;
     padding: 24px;
@@ -21,6 +22,10 @@
     }
 }
 
+.section-content {
+    font-family: 'Teko', sans-serif;
+}
+
 .top-border {
     border-top: 1px solid #a5a5a5;
 }
@@ -30,19 +35,19 @@
 }
 
 .book-title {
-    font-size: large;
-    font-weight: 600;
+    font-size: larger;
+    font-weight: 500;
     color: #000;
 }
 
 .book-isbn {
-    font-size: large;
+    font-size: larger;
     font-weight: 300;
     color: #a5a5a5;
 }
 
 .book-author {
-    font-size: large;
+    font-size: larger;
     font-weight: 300;
     color: #000;
 }

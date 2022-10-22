@@ -8,7 +8,7 @@
         <fa-icon 
         [icon]="expanded ? arrowExpanded : arrowCollapsed"></fa-icon>
     </div>
-    <ul *ngIf="expanded" [@sectionContentState]>
+    <ul *ngIf="expanded" [@sectionContentState] class="section-content">
         <li *ngFor="let book of books">
             <span class="book-title">{{ book.title }}</span>
             <span *ngIf="book.title && book.author" class="book-author"> - </span>
