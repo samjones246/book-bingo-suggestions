@@ -9,5 +9,6 @@
     [books]="prompt.suggestions"
     [expanded]="i == selected"
     [first]="i==0"
+    [last]="i==prompts.length-1"
     (select)="select(i)"></app-section>
 </div>
